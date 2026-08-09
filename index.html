@@ -1,0 +1,3529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elly Enga | Personal Website</title>
+    <meta name="description" content="Elly Enga – Personal website showcasing my journey, projects, and passions." />
+    <meta name="keywords" content="Elly Enga, personal website, portfolio, technology, AI, chatbot" />
+    <meta name="author" content="Elly Enga" />
+    <meta property="og:title" content="Elly Enga | Personal Website" />
+    <meta property="og:description" content="Explore Elly's world – technology, innovation, and creativity." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="https://ellyenga.com" />
+
+    <style>
+        /* =========================================
+           RESET & BASE
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        button {
+            cursor: pointer;
+            font-family: inherit;
+        }
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        /* ===== LIGHT THEME ===== */
+        body.light-theme {
+            background: #f5f5f5;
+            color: #222;
+        }
+        body.light-theme .header {
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .logo {
+            background: linear-gradient(135deg, #222, #4a9eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.light-theme .menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .menu-link {
+            color: #333;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        body.light-theme .menu-link:hover {
+            background: rgba(74, 158, 255, 0.1);
+            color: #000;
+        }
+        body.light-theme .menu-button span {
+            background: #222;
+        }
+        body.light-theme .page-section::before {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+        }
+        body.light-theme .page-content p,
+        body.light-theme .about-text,
+        body.light-theme .education-card p,
+        body.light-theme .project-card p,
+        body.light-theme .exp-content p,
+        body.light-theme .education-focus>p,
+        body.light-theme .career-ambition>p,
+        body.light-theme .challenge-text {
+            color: #444 !important;
+        }
+        body.light-theme .info-card,
+        body.light-theme .education-card,
+        body.light-theme .project-card,
+        body.light-theme .contact-form,
+        body.light-theme .contact-social,
+        body.light-theme .game-box,
+        body.light-theme .chat-box,
+        body.light-theme .quote-container,
+        body.light-theme .challenge-card,
+        body.light-theme .appreciation-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+        body.light-theme .info-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        body.light-theme .interest-list span {
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .interest-list span:hover {
+            background: #4a9eff;
+            color: #fff;
+        }
+        body.light-theme .skill-tag {
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+        }
+        body.light-theme .skill-tag:hover {
+            background: #4a9eff;
+            color: #fff;
+        }
+        body.light-theme .education-marker {
+            background: #fff;
+            border-color: #4a9eff;
+            color: #4a9eff;
+        }
+        body.light-theme .education-status {
+            border-color: rgba(0, 0, 0, 0.1);
+            color: #555;
+        }
+        body.light-theme .gallery-item,
+        body.light-theme .video-card {
+            background: rgba(255, 255, 255, 0.6);
+        }
+        body.light-theme .bot-message {
+            background: rgba(200, 200, 200, 0.8);
+            color: #222;
+        }
+        body.light-theme .user-message {
+            background: #4a9eff;
+            color: #fff;
+        }
+        body.light-theme #chatInput {
+            color: #222;
+        }
+        body.light-theme #chatInput::placeholder {
+            color: #888;
+        }
+        body.light-theme .floating-chat {
+            background: linear-gradient(135deg, #4a9eff, #1e7aff);
+            color: #fff;
+        }
+        body.light-theme .back-to-top {
+            background: rgba(74, 158, 255, 0.2);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: #222;
+        }
+        body.light-theme .back-to-top:hover {
+            background: #4a9eff;
+            color: #fff;
+        }
+        body.light-theme footer {
+            background: rgba(255, 255, 255, 0.9);
+            color: #666;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        body.light-theme .welcome-box {
+            background: rgba(255, 255, 255, 0.92);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+        body.light-theme .welcome-box h1 {
+            background: linear-gradient(135deg, #222, #4a9eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body.light-theme #visitorName {
+            background: #fff;
+            color: #222;
+            border-color: #ccc;
+        }
+        body.light-theme .theme-toggle {
+            background: rgba(0, 0, 0, 0.1);
+            color: #222;
+        }
+        body.light-theme .quiz-option {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #222;
+        }
+        body.light-theme .quiz-option:hover:not(:disabled) {
+            background: rgba(74, 158, 255, 0.15);
+        }
+        body.light-theme .quiz-option.correct {
+            background: #4CAF50;
+            color: #fff;
+        }
+        body.light-theme .quiz-option.wrong {
+            background: #f44336;
+            color: #fff;
+        }
+        body.light-theme .quiz-option.disabled {
+            opacity: 0.5;
+        }
+        body.light-theme .suggestion-chip {
+            background: rgba(0, 0, 0, 0.08);
+            color: #222;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .suggestion-chip:hover {
+            background: #4a9eff;
+            color: #fff;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        #loadingSpinner {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+            z-index: 10000;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        body.light-theme #loadingSpinner {
+            background: #f5f5f5;
+        }
+        #loadingSpinner.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(74, 158, 255, 0.1);
+            border-top-color: #4a9eff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* =========================================
+           WELCOME SCREEN — BLUE BACKGROUND
+        ========================================= */
+        .welcome-screen {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1a3a6a 0%, #0a1e3d 50%, #051428 100%);
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        body.light-theme .welcome-screen {
+            background: radial-gradient(circle at center, #4a8af4 0%, #1a4a8a 60%, #0a2a5a 100%);
+        }
+        .welcome-screen.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .welcome-box {
+            width: 90%;
+            max-width: 440px;
+            text-align: center;
+            padding: 30px 24px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+        .welcome-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border: 2px solid #6aafff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 300;
+            color: #fff;
+            background: rgba(74, 158, 255, 0.2);
+            box-shadow: 0 0 50px rgba(74, 158, 255, 0.3);
+        }
+        .welcome-box h1 {
+            font-size: 44px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff, #8ac4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .welcome-box>p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+        #visitorName {
+            width: 100%;
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+            font-size: 16px;
+            border-radius: 12px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            margin-bottom: 16px;
+        }
+        #visitorName::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        #visitorName:focus {
+            border-color: #4a9eff;
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.3);
+        }
+        #proceedBtn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #4a9eff, #1e7aff);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(30, 122, 255, 0.3);
+        }
+        #proceedBtn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(30, 122, 255, 0.5);
+        }
+        .error-message {
+            color: #ff6b6b !important;
+            min-height: 24px;
+            margin-top: 16px !important;
+            font-size: 14px;
+        }
+              /* ===== MAIN WEBSITE ===== */
+        .main-website {
+            display: none;
+        }
+        .main-website.show {
+            display: block;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 40%, #4a9eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 30px;
+            padding: 8px 16px;
+            color: #fff;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.3s;
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .menu-button {
+            width: 46px;
+            height: 46px;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 0;
+        }
+        .menu-button span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .menu-button.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .menu-button.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-button.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            position: fixed;
+            top: 72px;
+            right: 0;
+            width: min(380px, 78%);
+            max-height: calc(100vh - 72px);
+            overflow-y: auto;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 999;
+            transform: translateX(105%);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .menu.open {
+            transform: translateX(0);
+        }
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            padding: 12px 0;
+        }
+        .menu-link {
+            display: block;
+            padding: 18px 28px;
+            color: #ccc;
+            font-size: 18px;
+            font-weight: 300;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: background 0.25s, padding-left 0.25s, color 0.25s;
+            letter-spacing: 0.5px;
+        }
+        .menu-link:hover {
+            background: rgba(74, 158, 255, 0.08);
+            padding-left: 38px;
+            color: #fff;
+        }
+        .menu-link .icon {
+            margin-right: 12px;
+            opacity: 0.6;
+        }
+
+        /* ===== PAGE SYSTEM ===== */
+        .page-section {
+            display: none;
+            min-height: 100vh;
+            padding: 100px 30px 70px;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            animation: pageFade 0.6s ease forwards;
+        }
+        .page-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(2px);
+            z-index: 0;
+            transition: background 0.3s;
+        }
+        .page-section>* {
+            position: relative;
+            z-index: 1;
+        }
+        .page-section.active-page {
+            display: flex;
+        }
+        @keyframes pageFade {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== HOME ===== */
+        .home-section {
+            background-image: url('images/background.jpg');
+            text-align: center;
+            padding: 140px 20px 70px;
+        }
+        .home-content {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .greeting-text {
+            color: #ddd;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            min-height: 3em;
+            word-break: break-word;
+        }
+        #displayName {
+            color: #4a9eff;
+            font-weight: 600;
+        }
+        .home-content h1 {
+            font-size: clamp(42px, 10vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+        .home-content h1 span {
+            display: block;
+            font-weight: 600;
+            background: linear-gradient(135deg, #fff 30%, #4a9eff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .quote-container {
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 30px 20px;
+        }
+        #quote {
+            max-width: 800px;
+            font-size: clamp(20px, 4vw, 36px);
+            font-weight: 300;
+            line-height: 1.4;
+            transition: opacity 0.6s, transform 0.6s;
+            color: #fff;
+        }
+        #quote.fade {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+        #quoteAuthor {
+            color: #999;
+            margin-top: 18px;
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        .fun-fact {
+            margin-top: 30px;
+            padding: 16px 24px;
+            background: rgba(74, 158, 255, 0.1);
+            border-radius: 40px;
+            display: inline-block;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            font-size: 16px;
+            color: #ccc;
+        }
+        .fun-fact span {
+            color: #4a9eff;
+            font-weight: 600;
+        }
+
+        /* ===== PAGE CONTENT COMMON ===== */
+        .page-content,
+        .about-page,
+        .education-page,
+        .career-page,
+        .blog-page,
+        .testimonials-page,
+        .challenges-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-number {
+            display: block;
+            color: #4a9eff;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .page-content h2,
+        .about-intro h2,
+        .education-header h2,
+        .career-header h2,
+        .blog-page h2,
+        .testimonials-page h2,
+        .challenges-page h2 {
+            font-size: clamp(34px, 7vw, 64px);
+            font-weight: 300;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        .page-content h2 span,
+        .about-intro h2 span,
+        .education-header h2 span,
+        .career-header h2 span,
+        .blog-page h2 span,
+        .testimonials-page h2 span,
+        .challenges-page h2 span {
+            font-weight: 600;
+            background: linear-gradient(135deg, #fff 40%, #4a9eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .small-title {
+            color: #888 !important;
+            font-size: 12px !important;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .page-content p {
+            max-width: 750px;
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ===== ABOUT ===== */
+        #about {
+            background-image: url('images/family.jpg');
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(180px, 0.8fr) 1.2fr;
+            gap: 50px;
+            align-items: center;
+            margin: 30px 0 50px;
+        }
+        .about-photo {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #151515;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(60%);
+            transition: filter 0.6s, transform 0.6s;
+        }
+        .about-photo:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        .about-intro h2 {
+            margin-bottom: 25px;
+        }
+        .about-text {
+            font-size: 17px !important;
+            line-height: 1.8 !important;
+            margin-bottom: 18px;
+            color: #ccc !important;
+        }
+        .about-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 20px 0 40px;
+        }
+        .info-card {
+            padding: 20px 16px;
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            transition: background 0.3s, transform 0.25s;
+            text-align: center;
+        }
+        .info-card:hover {
+            background: rgba(30, 30, 30, 0.9);
+            transform: translateY(-4px);
+            border-color: #4a9eff;
+        }
+        .info-card span {
+            display: block;
+            color: #666;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .info-card strong {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .about-interests {
+            margin-top: 10px;
+        }
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .interest-list span {
+            padding: 10px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            color: #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        }
+        .interest-list span:hover {
+            background: #4a9eff;
+            color: #fff;
+            border-color: #4a9eff;
+            box-shadow: 0 0 20px rgba(74, 158, 255, 0.3);
+        }
+
+        /* ===== RESUME ===== */
+        .resume-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #4a9eff;
+            color: #fff;
+            border-radius: 40px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .resume-btn:hover {
+            background: #1e7aff;
+            transform: scale(1.05);
+        }
+
+        /* ===== EDUCATION ===== */
+        #education {
+            background-image: url('images/me8.jpg');
+        }
+        .education-header {
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+        .education-header>p:last-child {
+            color: #bbb;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+        .education-timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding-left: 0;
+        }
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, #4a9eff, #1e7aff);
+        }
+        .education-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 52px 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+        .education-marker {
+            position: relative;
+            z-index: 2;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+            border: 2px solid #4a9eff;
+            border-radius: 50%;
+            color: #4a9eff;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(74, 158, 255, 0.2);
+        }
+        .education-card {
+            padding: 28px 30px;
+            background: rgba(16, 16, 16, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            transition: transform 0.3s, border-color 0.3s, background 0.3s;
+        }
+        .education-card:hover {
+            transform: translateX(6px);
+            border-color: #4a9eff;
+            background: rgba(20, 20, 20, 0.9);
+        }
+        .education-type {
+            display: block;
+            color: #4a9eff;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .education-card h3 {
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .education-card p {
+            color: #bbb;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .education-status {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: #aaa;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+        .education-focus {
+            margin-top: 70px;
+            padding: 35px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .education-focus h3 {
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        .education-focus>p {
+            color: #bbb;
+            font-size: 16px;
+            line-height: 1.8;
+            align-self: end;
+        }
+        
+          /* ===== CAREER ===== */
+        #career {
+            background-image: url('images/me1.jpg');
+        }
+        .career-header {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        .career-header>p:last-child {
+            color: #bbb;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+        .career-skills {
+            margin: 40px 0;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .skill-tag {
+            padding: 10px 24px;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 40px;
+            color: #ddd;
+            font-size: 14px;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+        .skill-tag:hover {
+            background: #4a9eff;
+            color: #fff;
+            border-color: #4a9eff;
+            box-shadow: 0 0 20px rgba(74, 158, 255, 0.2);
+        }
+
+        /* Skills Progress Bars */
+        .skills-progress {
+            margin: 40px 0;
+        }
+        .skill-bar {
+            margin-bottom: 20px;
+        }
+        .skill-bar .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 6px;
+        }
+        .skill-bar .progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .skill-bar .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a9eff, #1e7aff);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+        body.light-theme .skill-bar .progress-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .career-projects {
+            margin: 50px 0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .project-card {
+            background: rgba(16, 16, 16, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px 22px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #4a9eff;
+        }
+        .project-icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .project-card h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .career-experience {
+            margin: 50px 0;
+        }
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .exp-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .exp-year {
+            color: #888;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .exp-content h4 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+        .exp-content p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .career-ambition {
+            margin-top: 50px;
+            padding: 35px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .career-ambition h3 {
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        .career-ambition>p {
+            color: #bbb;
+            font-size: 16px;
+            line-height: 1.8;
+            align-self: end;
+        }
+
+        /* ===== GALLERY ===== */
+        #gallery {
+            background-image: url('images/marie.jpg');
+        }
+        .gallery-grid {
+            display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery-item {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            text-align: center;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: #4a9eff;
+        }
+        .gallery-placeholder {
+            padding: 40px 10px;
+            font-size: 48px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .gallery-caption {
+            padding: 12px 10px;
+            color: #ccc;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== VIDEOS ===== */
+        #videos {
+            background-image: url('images/mom rose2.jpg');
+        }
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .video-card {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .video-card:hover {
+            transform: translateY(-6px);
+            border-color: #4a9eff;
+        }
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 36px;
+            color: #888;
+            transition: background 0.3s;
+        }
+        .video-placeholder:hover {
+            background: rgba(74, 158, 255, 0.1);
+        }
+        .play-icon {
+            font-size: 40px;
+            opacity: 0.7;
+        }
+        .video-card h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+        .video-card p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        video {
+            width: 100%;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        /* ===== CHATBOT ===== */
+        #chatbot {
+            background-image: url('images/mom rose3.jpg');
+        }
+        .chat-box {
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+            max-width: 800px;
+        }
+        .chat-messages {
+            min-height: 280px;
+            max-height: 420px;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #4a9eff;
+            border-radius: 10px;
+        }
+        .bot-message,
+        .user-message {
+            padding: 12px 18px;
+            max-width: 85%;
+            border-radius: 16px;
+            line-height: 1.5;
+            font-size: 15px;
+            word-break: break-word;
+            animation: msgPop 0.3s ease;
+        }
+        @keyframes msgPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .bot-message {
+            align-self: flex-start;
+            background: rgba(30, 30, 30, 0.8);
+            color: #eee;
+            border-bottom-left-radius: 4px;
+            border-left: 2px solid #4a9eff;
+        }
+        .user-message {
+            align-self: flex-end;
+            background: #4a9eff;
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        #chatInput {
+            flex: 1;
+            padding: 16px 20px;
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        #chatInput::placeholder {
+            color: #666;
+        }
+        #sendChat {
+            padding: 0 28px;
+            background: #4a9eff;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s;
+        }
+        #sendChat:hover {
+            background: #1e7aff;
+        }
+
+        /* ===== SUGGESTION CHIPS ===== */
+        .suggestion-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px 20px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .suggestion-chip {
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ccc;
+            font-size: 12px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .suggestion-chip:hover {
+            background: #4a9eff;
+            color: #fff;
+            border-color: #4a9eff;
+        }
+
+        /* ===== QUIZ GAME ===== */
+        #game {
+            background-image: url('images/brother.jpg');
+        }
+        .game-box {
+            margin-top: 30px;
+            max-width: 700px;
+            width: 100%;
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+        .game-box .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #888;
+        }
+        .game-box .game-header .score {
+            color: #4a9eff;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        #questionText {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 16px 0 24px;
+            min-height: 60px;
+            line-height: 1.4;
+            color: #fff;
+        }
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .quiz-option {
+            padding: 14px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: #ddd;
+            font-size: 15px;
+            transition: 0.25s;
+            cursor: pointer;
+            text-align: left;
+        }
+        .quiz-option:hover:not(:disabled) {
+            background: rgba(74, 158, 255, 0.15);
+            border-color: #4a9eff;
+            transform: scale(1.02);
+        }
+        .quiz-option.correct {
+            background: #4CAF50;
+            border-color: #4CAF50;
+            color: #fff;
+        }
+        .quiz-option.wrong {
+            background: #f44336;
+            border-color: #f44336;
+            color: #fff;
+        }
+        .quiz-option.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        .quiz-option .option-label {
+            font-weight: 600;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+        #gameFeedback {
+            font-size: 16px;
+            min-height: 30px;
+            margin: 8px 0 16px;
+            color: #ddd;
+        }
+        #nextQuestionBtn {
+            padding: 12px 36px;
+            background: #4a9eff;
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+            display: none;
+        }
+        #nextQuestionBtn:hover {
+            background: #1e7aff;
+            transform: scale(1.03);
+        }
+        #gameResetBtn {
+            padding: 10px 24px;
+            background: transparent;
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-size: 14px;
+            transition: 0.3s;
+            margin-top: 8px;
+        }
+        #gameResetBtn:hover {
+            border-color: #4a9eff;
+            color: #fff;
+        }
+        .quiz-progress {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+/* ===== BLOG ===== */
+        #blog {
+            background-image: url('images/chomba.jpg');
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .blog-post {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .blog-post:hover {
+            transform: translateY(-6px);
+            border-color: #4a9eff;
+        }
+        .blog-post .date {
+            color: #888;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .blog-post h3 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        .blog-post p {
+            color: #bbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .blog-post .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #4a9eff;
+            font-weight: 500;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        #testimonials {
+            background-image: url('images/mbuya.jpg');
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .testimonial-card {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: #4a9eff;
+        }
+        .testimonial-card .quote {
+            font-style: italic;
+            color: #ddd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .testimonial-card .author {
+            margin-top: 15px;
+            font-weight: 300;
+            color: #4a9eff;
+        }
+        .guestbook-form {
+            margin-top: 40px;
+            max-width: 600px;
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .guestbook-form input,
+        .guestbook-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            margin-bottom: 14px;
+        }
+        .guestbook-form input:focus,
+        .guestbook-form textarea:focus {
+            border-color: #4a9eff;
+        }
+        .guestbook-form button {
+            padding: 12px 30px;
+            background: #4a9eff;
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .guestbook-form button:hover {
+            background: #1e7aff;
+        }
+
+        /* ===== CHALLENGES & APPRECIATION ===== */
+        #challenges {
+            background-image: url('images/me6.jpg');
+        }
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .challenge-card {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .challenge-card:hover {
+            transform: translateY(-6px);
+            border-color: #4a9eff;
+        }
+        .challenge-card h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #4a9eff;
+        }
+        .challenge-card .challenge-icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .challenge-text {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .appreciation-card {
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .appreciation-card h3 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        .appreciation-card .heart {
+            color: #ff6b6b;
+            font-size: 36px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .appreciation-card p {
+            color: #ddd;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           CONTACT — Discord Webhook Integrated
+        ========================================= */
+        #contact {
+            background-image: url('images/me9.jpg');
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            max-width: 900px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-size: 13px;
+            color: #aaa;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4a9eff;
+        }
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 6px;
+        }
+        .contact-submit {
+            padding: 14px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .contact-submit:hover {
+            background: #1ebe5c;
+            transform: scale(1.02);
+        }
+        .contact-submit.facebook {
+            background: #1877f2;
+        }
+        .contact-submit.facebook:hover {
+            background: #0e6bd4;
+        }
+        .contact-submit.discord {
+            background: #5865F2;
+        }
+        .contact-submit.discord:hover {
+            background: #4752c4;
+        }
+        .contact-status {
+            color: #6fcf97;
+            font-size: 14px;
+            min-height: 24px;
+            text-align: center;
+        }
+        .contact-social {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: rgba(16, 16, 16, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .social-link {
+            padding: 10px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 40px;
+            color: #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .social-link:hover {
+            background: #4a9eff;
+            color: #fff;
+            border-color: #4a9eff;
+        }
+        .newsletter {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .newsletter h4 {
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        .newsletter-input-group {
+            display: flex;
+            gap: 10px;
+        }
+        .newsletter-input-group input {
+            flex: 1;
+            padding: 10px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+        }
+        .newsletter-input-group button {
+            padding: 10px 20px;
+            background: #4a9eff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           FLOATING CHAT BUTTON
+        ========================================= */
+        .floating-chat {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #4a9eff, #1e7aff);
+            color: #fff;
+            font-size: 28px;
+            box-shadow: 0 6px 30px rgba(30, 122, 255, 0.4);
+            z-index: 998;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .floating-chat:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 40px rgba(30, 122, 255, 0.6);
+        }
+
+        /* =========================================
+           SHARE BUTTON
+        ========================================= */
+        .share-btn {
+            position: fixed;
+            right: 24px;
+            bottom: 100px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 997;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
+        }
+        .share-btn:hover {
+            background: #4a9eff;
+        }
+
+        /* =========================================
+           BACK TO TOP
+        ========================================= */
+        .back-to-top {
+            position: fixed;
+            right: 24px;
+            bottom: 160px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(74, 158, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 997;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #4a9eff;
+        }
+
+        /* =========================================
+           MUSIC PLAYER
+        ========================================= */
+        .music-player-fixed {
+            position: fixed;
+            left: 24px;
+            bottom: 24px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 997;
+            max-width: 300px;
+        }
+        .music-player-fixed .track-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .music-player-fixed .track-info .track-name {
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+        }
+        .music-player-fixed .track-info .track-artist {
+            font-size: 12px;
+            color: #888;
+        }
+        .music-player-fixed audio {
+            width: 100px;
+            height: 30px;
+        }
+        .music-player-fixed .now-playing-label {
+            font-size: 10px;
+            color: #4a9eff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        body.light-theme .music-player-fixed {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .music-player-fixed .track-info .track-name {
+            color: #222;
+        }
+        
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(8px);
+            color: #666;
+            font-size: 14px;
+            line-height: 2;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        @media (max-width: 800px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-photo {
+                max-width: 100%;
+            }
+            .about-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .education-item {
+                grid-template-columns: 42px 1fr;
+                gap: 15px;
+            }
+            .education-marker {
+                width: 42px;
+                height: 42px;
+                font-size: 10px;
+            }
+            .education-card {
+                padding: 20px;
+            }
+            .education-card h3 {
+                font-size: 22px;
+            }
+            .education-focus {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 25px 0;
+            }
+            .career-ambition {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .exp-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .challenge-grid {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 0 20px;
+                height: 64px;
+            }
+            .menu {
+                top: 64px;
+                width: 85%;
+                max-height: calc(100vh - 64px);
+            }
+            .menu-link {
+                padding: 16px 22px;
+                font-size: 17px;
+            }
+            .page-section {
+                padding: 90px 20px 50px;
+            }
+            .home-section {
+                padding: 110px 20px 50px;
+            }
+            .floating-chat {
+                width: 56px;
+                height: 56px;
+                right: 16px;
+                bottom: 16px;
+                font-size: 24px;
+            }
+            .back-to-top {
+                right: 16px;
+                bottom: 130px;
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+            .share-btn {
+                right: 16px;
+                bottom: 80px;
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+            .music-player-fixed {
+                left: 16px;
+                bottom: 16px;
+                padding: 10px 14px;
+                max-width: 200px;
+            }
+            .music-player-fixed audio {
+                width: 70px;
+            }
+            .welcome-box h1 {
+                font-size: 36px;
+            }
+            .header-actions .theme-toggle span {
+                display: none;
+            }
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .about-info {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .info-card {
+                padding: 14px 10px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form,
+            .contact-social {
+                padding: 20px;
+            }
+            .game-box {
+                padding: 20px;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .music-player-fixed {
+                display: none;
+            }
+            #questionText {
+                font-size: 18px;
+            }
+            .quiz-option {
+                font-size: 14px;
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== LOADING SPINNER ===== -->
+    <div id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ===== WELCOME SCREEN — BLUE BACKGROUND ===== -->
+    <section id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-box">
+            <div class="welcome-logo">✦</div>
+            <h1>Welcome</h1>
+            <p>Enter your name to proceed</p>
+            <input type="text" id="visitorName" placeholder="Enter your name" autocomplete="off" />
+            <button id="proceedBtn">Proceed</button>
+            <p id="nameError" class="error-message"></p>
+        </div>
+    </section>
+
+    <!-- ===== MAIN WEBSITE ===== -->
+    <div id="mainWebsite" class="main-website">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">Elly Enga</div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span>🌙</span><span id="themeLabel">Dark</span>
+                </button>
+                <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- MENU -->
+        <nav class="menu" id="menu">
+            <div class="menu-items">
+                <a href="#home" class="menu-link"><span class="icon">🏠</span> Home</a>
+                <a href="#about" class="menu-link"><span class="icon">👤</span> About Me</a>
+                <a href="#education" class="menu-link"><span class="icon">📚</span> Education</a>
+                <a href="#career" class="menu-link"><span class="icon">💼</span> Career</a>
+                <a href="#gallery" class="menu-link"><span class="icon">📸</span> Photos</a>
+                <a href="#videos" class="menu-link"><span class="icon">🎬</span> Videos</a>
+                <a href="#chatbot" class="menu-link"><span class="icon">🤖</span> Chat with AI</a>
+                <a href="#game" class="menu-link"><span class="icon">🎯</span> Quiz Game</a>
+                <a href="#blog" class="menu-link"><span class="icon">📰</span> Blog</a>
+                <a href="#testimonials" class="menu-link"><span class="icon">💬</span> Testimonials</a>
+                <a href="#challenges" class="menu-link"><span class="icon">⚡</span> My Journey</a>
+                <a href="#contact" class="menu-link"><span class="icon">✉️</span> Contact</a>
+            </div>
+        </nav>
+
+        <!-- PAGES -->
+        <main>
+
+            <!-- ===== HOME ===== -->
+            <section id="home" class="page-section home-section active-page">
+                <div class="home-content">
+                    <p class="greeting-text" id="greetingDisplay">Good morning, <span id="displayName"></span>! Welcome to Elly's Website.</p>
+                    <h1>Explore <span>Elly's World</span></h1>
+                    <div class="quote-container">
+                        <p id="quote">"Success is not final, failure is not fatal: it is the courage to continue that counts."</p>
+                        <small id="quoteAuthor">— Winston Churchill</small>
+                    </div>
+                    <div class="fun-fact" id="funFact">💡 <span>Did you know?</span> I built this entire website from scratch in one day!</div>
+                </div>
+            </section>
+
+            <!-- ===== ABOUT ===== -->
+            <section id="about" class="page-section">
+                <div class="about-page">
+                    <span class="section-number">01 — ABOUT ME</span>
+                    <div class="about-grid">
+                        <div class="about-photo">
+                            <img src="images/me1.jpg" alt="Elly Enga" />
+                        </div>
+                        <div class="about-intro">
+                            <p class="small-title">NICE TO MEET YOU</p>
+                            <h2>I'm <span>Elly Enga.</span></h2>
+                            <p class="about-text">Welcome to my personal space. I'm someone who enjoys learning, creating, exploring technology and turning ideas into something real.</p>
+                            <p class="about-text">This website is a place where I can share my journey, interests, projects, experiences and ambitions.</p>
+                            <a href="#" class="resume-btn" id="resumeBtn">📄 Download My Resume (PDF)</a>
+                        </div>
+                    </div>
+                    <div class="about-info">
+                        <div class="info-card"><span>NAME</span><strong>Elly Enga</strong></div>
+                        <div class="info-card"><span>DREAM</span><strong>Medical Doctor</strong></div>
+                        <div class="info-card"><span>PASSION</span><strong>Innovation</strong></div>
+                        <div class="info-card"><span>FOCUS</span><strong>Digital Creativity</strong></div>
+                    </div>
+                    <div class="about-interests">
+                        <p class="small-title">MY INTERESTS</p>
+                        <div class="interest-list">
+                            <span>Technology</span><span>Programming</span><span>Artificial Intelligence</span>
+                            <span>Innovation</span><span>Robotics</span><span>Creative Projects</span>
+                            <span>Web Development</span><span>Data Science</span><span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== EDUCATION ===== -->
+            <section id="education" class="page-section">
+                <div class="education-page">
+                    <span class="section-number">02 — EDUCATION</span>
+                    <div class="education-header">
+                        <p class="small-title">MY LEARNING JOURNEY</p>
+                        <h2>Education &amp; <span>Growth.</span></h2>
+                        <p>Education is more than certificates. It is the continuous process of learning, experimenting, making mistakes and becoming better.</p>
+                    </div>
+                    <div class="education-timeline">
+                        <div class="education-item">
+                            <div class="education-marker">01</div>
+                            <div class="education-card">
+                                <span class="education-type">SCHOOL</span>
+                                <h3>Primary Education</h3>
+                                <p>My early education i was at Chile Primary school where I developed the foundation for learning, creativity, mathematics, science and communication.</p>
+                                <span class="education-status">FOUNDATION</span>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-marker">02</div>
+                            <div class="education-card">
+                                <span class="education-type">SCHOOL</span>
+                                <h3>Secondary Education</h3>
+                                <p>At Don Bosco Secondary School, a period of deeper academic learning, personal development and discovering areas that interested me.</p>
+                                <span class="education-status">COMPLETED</span>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-marker">03</div>
+                            <div class="education-card">
+                                <span class="education-type">HIGHER EDUCATION</span>
+                                <h3>University (CBU or UNZA)</h3>
+                                <p>I plan to study Medicine at CBU or UNZA to become a Medical Doctor. This is my dream and I'm working towards it.</p>
+                                <span class="education-status">PURSUING</span>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-marker">04</div>
+                            <div class="education-card">
+                                <span class="education-type">SELF LEARNING</span>
+                                <h3>Technology &amp; Programming</h3>
+                                <p>Outside the classroom, I explore programming, web development, artificial intelligence and technology through practical projects even though i lacked Material,Laptop, to use.</p>
+                                <span class="education-status">ALWAYS LEARNING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-focus">
+                        <div>
+                            <p class="small-title">CURRENT FOCUS</p>
+                            <h3>Becoming a <span>Medical Doctor</span></h3>
+                        </div>
+                        <p>My dream is to study Medicine at CBU or UNZA and serve my community as a doctor. I am determined to achieve this goal.</p>
+                    </div>
+                </div>
+            </section>
+                  <!-- ===== CAREER ===== -->
+            <section id="career" class="page-section">
+                <div class="career-page">
+                    <span class="section-number">03 — CAREER</span>
+                    <div class="career-header">
+                        <p class="small-title">PROFESSIONAL PATH</p>
+                        <h2>Building <span>the Future.</span></h2>
+                        <p>My career journey is driven by curiosity, creativity and a passion for technology. I aim to build solutions that make a difference.</p>
+                    </div>
+
+                    <div class="skills-progress">
+                        <p class="small-title">SKILLS PROGRESS</p>
+                        <div class="skill-bar">
+                            <div class="skill-name"><span>HTML &amp; CSS</span><span>60%</span></div>
+                            <div class="progress-track"><div class="progress-fill" data-width="60"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-name"><span>JavaScript</span><span>45%</span></div>
+                            <div class="progress-track"><div class="progress-fill" data-width="45"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-name"><span>React</span><span>40%</span></div>
+                            <div class="progress-track"><div class="progress-fill" data-width="40"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-name"><span>Python</span><span>35%</span></div>
+                            <div class="progress-track"><div class="progress-fill" data-width="35"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-name"><span>UI/UX Design</span><span>65%</span></div>
+                            <div class="progress-track"><div class="progress-fill" data-width="65"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="career-projects">
+                        <p class="small-title">PROJECTS</p>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <span class="project-icon">🖥️</span>
+                                <h3>Personal Website</h3>
+                                <p>This very website — built from scratch with HTML, CSS and JavaScript. A space to share my journey and connect with others.</p>
+                            </div>
+                            <div class="project-card">
+                                <span class="project-icon">🤖</span>
+                                <h3>AI Chatbot</h3>
+                                <p>An interactive chatbot that responds to user queries, built as part of this website to answer basic questions about me.</p>
+                            </div>
+                            <div class="project-card">
+                                <span class="project-icon">📊</span>
+                                <h3>Data Dashboard</h3>
+                                <p>A data visualization project that transforms raw data into interactive charts and insights using JavaScript libraries.</p>
+                            </div>
+                            <div class="project-card">
+                                <span class="project-icon">🎯</span>
+                                <h3>Quiz Game</h3>
+                                <p>An interactive quiz about Elly — test your knowledge and learn more about his life, interests, and journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="career-experience">
+                        <p class="small-title">EXPERIENCE</p>
+                        <div class="experience-timeline">
+                            <div class="exp-item">
+                                <div class="exp-year">2024 — Present</div>
+                                <div class="exp-content">
+                                    <h4>Junior Developer</h4>
+                                    <p>Working on web development projects, building responsive interfaces and wanting to collaborate with design teams.</p>
+                                </div>
+                            </div>
+                            <div class="exp-item">
+                                <div class="exp-year">2023 — 2024</div>
+                                <div class="exp-content">
+                                    <h4>Thinking</h4>
+                                    <p>I started thinking too much about how Computer systems Works.</p>
+                                </div>
+                            </div>
+                            <div class="exp-item">
+                                <div class="exp-year">2022 — 2023</div>
+                                <div class="exp-content">
+                                    <h4>Tech</h4>
+                                    <p>No body in computer field.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="career-ambition">
+                        <div>
+                            <p class="small-title">FUTURE AMBITIONS</p>
+                            <h3>Become a <span>Medical Doctor</span></h3>
+                        </div>
+                        <p>I dream of studying Medicine at CBU or UNZA and becoming a Medical Doctor. I want to serve my community and make a difference in people's lives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== GALLERY ===== -->
+            <section id="gallery" class="page-section">
+                <div class="page-content">
+                    <span class="section-number">04 — PHOTOS</span>
+                    <h2>Moments &amp; <span>Memories.</span></h2>
+                    <p>A visual collection of my Photos — places I've been, things I've done and people who inspire me and who i love ❤️.</p>
+                    <div class="gallery-grid">
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me1.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/marie.jpg" alt="Me" /></div><p class="gallery-caption">Marie</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me9.jpg" alt="Me" /></div><p class="gallery-caption">Me right (G10) mom and my brother left (G11)</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me2.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me3.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me4.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me5.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me6.jpg" alt="Me" /></div><p class="gallery-caption">Me</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me7.jpg" alt="Me" /></div><p class="gallery-caption">Me at school</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/me8.jpg" alt="Me" /></div><p class="gallery-caption">Me getting an haircut</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/mom rose.jpg" alt="Mom Rose" /></div><p class="gallery-caption">Mom Rose</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/mom rose1.jpg" alt="Mom Rose 1" /></div><p class="gallery-caption">Mom Rose</p></div>
+                 
+                 
+                    
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/family.jpg" alt="Family" /></div><p class="gallery-caption">Me, Grandma, Mom Naomi and Albert</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/brother.jpg" alt="Brother" /></div><p class="gallery-caption">Brother Albert</p></div>
+                        <div class="gallery-item"><div class="gallery-placeholder"><img src="images/chomba.jpg" alt="Chomba" /></div><p class="gallery-caption">Brother Chris</p></div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== VIDEOS ===== -->
+            <section id="videos" class="page-section">
+                <div class="page-content">
+                    <span class="section-number">05 — VIDEOS</span>
+                    <h2>Visual <span>Stories.</span></h2>
+                    <p>Video content that captures my creative process, projects and moments worth sharing.</p>
+                    <div class="videos-grid">
+                 
+                        <div class="video-card">
+                            <video controls>
+                                <source src="videos/me2.mp4" type="video/mp4" />
+                            </video>
+                            <h3>Me 2</h3>
+                            
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CHATBOT ===== -->
+            <section id="chatbot" class="page-section">
+                <div class="page-content">
+                    <span class="section-number">06 — CHAT</span>
+                    <h2>Chat with <span>AI.</span></h2>
+                    <p>Ask me anything about Elly, the website, or just say hello! Type <strong>!train question | answer</strong> to teach me something new.</p>
+                    <div class="chat-box">
+                        <div id="chatMessages" class="chat-messages">
+                            <div class="bot-message">Hello 👋 I'm Elly's website assistant. I know almost everything about Elly — his life, education, family, interests, dreams, and journey. Ask me anything! 😊</div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chatInput" placeholder="Type a message..." />
+                            <button id="sendChat">Send</button>
+                        </div>
+                        <div class="suggestion-chips" id="suggestionChips">
+                            <span class="suggestion-chip" data-question="Who is Elly?">👤 Who is Elly?</span>
+                            <span class="suggestion-chip" data-question="Tell me about Elly's education">📚 Education</span>
+                            <span class="suggestion-chip" data-question="What are Elly's interests?">🎯 Interests</span>
+                            <span class="suggestion-chip" data-question="Who is Marie to Elly?">❤️ Marie</span>
+                            <span class="suggestion-chip" data-question="What are Elly's challenges?">⚡ Challenges</span>
+                            <span class="suggestion-chip" data-question="Elly's family">👨‍👩‍👧‍👦 Family</span>
+                            <span class="suggestion-chip" data-question="What is Elly's dream career?">💊 Dream</span>
+                            <span class="suggestion-chip" data-question="Which university does Elly want to attend?">🎓 University</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== QUIZ GAME — 50 QUESTIONS ===== -->
+            <section id="game" class="page-section">
+                <div class="page-content">
+                    <span class="section-number">07 — QUIZ</span>
+                    <h2>🎯 50-Question <span>Quiz.</span></h2>
+                    <p>How well do you know Elly? Answer these 50 questions covering his life, education, family, interests, challenges, and more!</p>
+                    <div class="game-box" id="quizContainer">
+                        <div class="game-header">
+                            <span class="quiz-progress" id="quizProgress">Question 1 / 50</span>
+                            <span class="score">⭐ <span id="quizScore">0</span></span>
+                        </div>
+                        <div id="questionText">Loading question...</div>
+                        <div class="quiz-options" id="quizOptions">
+                            <button class="quiz-option" disabled>A</button>
+                            <button class="quiz-option" disabled>B</button>
+                            <button class="quiz-option" disabled>C</button>
+                            <button class="quiz-option" disabled>D</button>
+                        </div>
+                        <div id="gameFeedback"></div>
+                        <button id="nextQuestionBtn">Next Question →</button>
+                        <button id="gameResetBtn">🔄 Restart Quiz</button>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== BLOG ===== -->
+            <section id="blog" class="page-section">
+                <div class="blog-page">
+                    <span class="section-number">08 — BLOG</span>
+                    <h2>Latest <span>Updates.</span></h2>
+                    <p>News, thoughts, and stories from my journey.</p>
+                    <div class="blog-grid">
+                        <div class="blog-post">
+                            <div class="date">June 12, 2026</div>
+                            <h3>Building a Personal Website</h3>
+                            <p>I decided to build my own personal website from scratch. It's been an incredible journey of learning and creativity.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                        <div class="blog-post">
+                            <div class="date">June 5, 2026</div>
+                            <h3>Exploring AI with Chatbots</h3>
+                            <p>I integrated a trainable AI chatbot into my website. It's amazing to see how users can teach it new responses.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                        <div class="blog-post">
+                            <div class="date">May 28, 2026</div>
+                            <h3>My Tech Stack for 2026</h3>
+                            <p>From HTML to Python, I'm always exploring new tools. Here's a breakdown of what I'm currently using.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TESTIMONIALS ===== -->
+            <section id="testimonials" class="page-section">
+                <div class="testimonials-page">
+                    <span class="section-number">09 — TESTIMONIALS</span>
+                    <h2>Kind <span>Words.</span></h2>
+                    <p>What people say about my work and my journey.</p>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <p class="quote">"Elly is a brilliant developer with a creative mind. His work is always polished and user-friendly."</p>
+                            <p class="author">— Jane Doe, Designer</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"I've seen Elly's growth over the years. He's passionate about technology and never stops learning."</p>
+                            <p class="author">— John Smith, Mentor</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="quote">"This website is a perfect reflection of Elly's personality – clean, modern, and full of character."</p>
+                            <p class="author">— Sarah Johnson, Friend</p>
+                        </div>
+                    </div>
+                    <div class="guestbook-form">
+                        <h3 style="font-weight:300; margin-bottom:15px;">Leave a Message</h3>
+                        <input type="text" id="guestName" placeholder="Your name" />
+                        <textarea id="guestMsg" rows="3" placeholder="Write your message..."></textarea>
+                        <button id="guestSubmit">Submit</button>
+                        <p id="guestStatus" style="margin-top:10px; color:#6fcf97;"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CHALLENGES & APPRECIATION ===== -->
+            <section id="challenges" class="page-section">
+                <div class="challenges-page">
+                    <span class="section-number">10 — MY JOURNEY</span>
+                    <h2>Challenges &amp; <span>Gratitude.</span></h2>
+                    <p>Every journey has hurdles, and I've faced many. But I've also been blessed with incredible people.</p>
+
+                    <div class="challenge-grid">
+                        <div class="challenge-card">
+                            <span class="challenge-icon">💻</span>
+                            <h3>No Laptop – A Constant Struggle</h3>
+                            <p class="challenge-text">One of my biggest challenges is not having a laptop. I've been building this website, learning to code, and working on projects using borrowed devices or mobile phones. It's frustrating, but it has taught me resilience and creativity. I dream of owning my own machine to take my skills to the next level.</p>
+                        </div>
+                        <div class="challenge-card">
+                            <span class="challenge-icon">📚</span>
+                            <h3>Limited Formal Education in Tech</h3>
+                            <p class="challenge-text">I haven't had the privilege of a formal education in computer science or technology. Everything I know is self-taught through online resources, trial and error, and sheer determination. Despite this, I've managed to build projects and gain practical skills. I'm proof that passion and hard work can overcome a lack of traditional schooling.</p>
+                        </div>
+                    </div>
+
+                    <div class="appreciation-card">
+                        <span class="heart">❤️</span>
+                        <h3>Deepest Gratitude</h3>
+                        <p>
+                            I want to express my heartfelt appreciation to <strong>Mom (Sister Rose Chilamo)</strong>, who has been an incredible support, helping me countless times on this journey. Your encouragement and belief in me mean the world. Thank you so much! 🙏<br /><br />
+                            I also want to thank my <strong>Mom (Naomi Chishimba)</strong> and my <strong>My Brothers (Albert Enga, Albert Kashiya, Chomba Christopher, Elias Kabaso) and Sister (Ethel Ng'adwe)</strong> – you Six are my pillars. Your love, sacrifices, and constant prayers keep me going. May God bless you all abundantly. 🙌<br /><br />
+                        </p>
+                        <p>
+                            Lastly, but not the least, I sincerely say thank you, <strong>Marie ❤️</strong>. Thank you for your kindness, the way you appreciate me, and for doing that things for me, genuinely mean a lot to me. I may not always say it, but I truly appreciate you. 😊🙏
+                            And to <strong>Sister Priscah</strong>, thank you so much for believing in me. Your support has meant more to me than I can fully explain. 🙏❤️ Thank you.
+                            I’m truly grateful to have people like you both in my life. May God bless you abundantly for everything you’ve done for me. ❤️🙏
+                        </p>
+                        <p style="margin-top:20px; font-size:14px; color:#999;">— Elly Enga</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTACT ===== -->
+            <section id="contact" class="page-section">
+                <div class="page-content">
+                    <span class="section-number">11 — CONTACT</span>
+                    <h2>Let's <span>Connect.</span></h2>
+                    <p>Send me a message directly via WhatsApp, Facebook, or Discord.</p>
+                    <div class="contact-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Your Name</label>
+                                <input type="text" id="contactName" placeholder="Enter your name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input type="email" id="contactEmail" placeholder="Enter your email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" rows="5" placeholder="Write your message..." required></textarea>
+                            </div>
+                            <div class="contact-actions">
+                                <button type="button" class="contact-submit" id="sendWhatsApp">
+                                    <span>💬</span> WhatsApp
+                                </button>
+                                <button type="button" class="contact-submit facebook" id="sendFacebook">
+                                    <span>📘</span> Facebook
+                                </button>
+                                <button type="button" class="contact-submit discord" id="sendDiscord">
+                                    <span>🤖</span> Discord
+                                </button>
+                            </div>
+                            <p id="contactStatus" class="contact-status"></p>
+                        </form>
+                        <div class="contact-social">
+                            <p class="small-title">FIND ME ONLINE</p>
+                            <div class="social-links">
+                                <a href="https://wa.me/260769635654" target="_blank" class="social-link">💬 WhatsApp</a>
+                                <a href="https://www.facebook.com/Kleempwrld" target="_blank" class="social-link">📘 Facebook</a>
+                                <a href="https://www.instagram.com/elly enga" target="_blank" class="social-link">📸 Instagram</a>
+                                <a href="https://www.tiktok.com/@kleempwrld300" target="_blank" class="social-link">🎵 TikTok</a>
+                                <a href="#" class="social-link">💼 LinkedIn</a>
+                                <a href="#" class="social-link">🐙 GitHub</a>
+                            </div>
+                            <p style="color:#888; font-size:14px; margin-top:10px;">
+                                <strong>WhatsApp:</strong> +260 96 155 0967<br />
+                                <strong>Instagram:</strong> @elly_enga<br />
+                                <strong>Facebook:</strong> Kleempwrld<br />
+                                <strong>TikTok:</strong> @kleempwrld
+                            </p>
+                            <div class="newsletter">
+                                <h4>📬 Subscribe to my newsletter</h4>
+                                <div class="newsletter-input-group">
+                                    <input type="email" id="newsletterEmail" placeholder="Your email" />
+                                    <button id="newsletterBtn">Subscribe</button>
+                                </div>
+                                <p id="newsletterStatus" style="font-size:13px; color:#6fcf97; margin-top:6px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FLOATING CHAT BUTTON -->
+        <button class="floating-chat" id="floatingChat" aria-label="Open chatbot">💬</button>
+
+        <!-- SHARE BUTTON -->
+        <button class="share-btn" id="shareBtn" aria-label="Share this page">📤</button>
+
+        <!-- BACK TO TOP -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-player-fixed" id="musicPlayer">
+            <div class="track-info">
+                <span class="now-playing-label">🎵 Now Playing</span>
+                <span class="track-name">Song 1</span>
+                <span class="track-artist">— Elly's Mix</span>
+            </div>
+            <audio controls loop>
+                <source src="songs/song1.m4a" type="audio/mp4" />
+                <source src="songs/song2.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Elly Enga</p>
+            <p>Built with ❤️ using HTML, CSS &amp; JavaScript — Discord webhook fully integrated!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        /* =========================================
+           DISCORD WEBHOOK
+        ========================================= */
+        const DISCORD_WEBHOOK_URL =
+            'https://discord.com/api/webhooks/1535964044199206923/vQ_paoLDtOyyvyvLfZaOguF_J_C4DEPrDlvEmmVyGZG-u9ndWBKunkqHZS2UdAUK3gSY';
+
+        async function sendToDiscord(content, username = 'Website Visitor') {
+            try {
+                const payload = { content, username };
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                return response.ok;
+            } catch (e) { return false; }
+        }
+           /* =========================================
+           ELEMENTS & INIT
+        ========================================= */
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const mainWebsite = document.getElementById('mainWebsite');
+        const visitorNameInput = document.getElementById('visitorName');
+        const proceedBtn = document.getElementById('proceedBtn');
+        const displayName = document.getElementById('displayName');
+        const greetingDisplay = document.getElementById('greetingDisplay');
+        const nameError = document.getElementById('nameError');
+        const menuButton = document.getElementById('menuButton');
+        const menu = document.getElementById('menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const pages = document.querySelectorAll('.page-section');
+        const backToTop = document.getElementById('backToTop');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const themeToggle = document.getElementById('themeToggle');
+        let typingTimeout = null;
+
+        window.addEventListener('load', () => {
+            setTimeout(() => loadingSpinner.classList.add('hide'), 800);
+        });
+
+        /* =========================================
+           WELCOME
+        ========================================= */
+        const savedName = localStorage.getItem('visitorName');
+        if (savedName) visitorNameInput.value = savedName;
+
+        function getTimeBasedGreeting(name) {
+            const h = new Date().getHours();
+            let g = 'Good morning';
+            if (h >= 12 && h < 17) g = 'Good afternoon';
+            else if (h >= 17) g = 'Good evening';
+            return `${g}, ${name}! Welcome to Elly's Website.`;
+        }
+
+        function typeGreeting(name) {
+            if (typingTimeout) clearTimeout(typingTimeout);
+            const full = getTimeBasedGreeting(name);
+            const el = greetingDisplay;
+            el.textContent = '';
+            let i = 0;
+            const speed = 40;
+
+            function typeChar() {
+                if (i < full.length) {
+                    el.textContent += full.charAt(i);
+                    i++;
+                    typingTimeout = setTimeout(typeChar, speed);
+                } else { typingTimeout = null; }
+            }
+            typeChar();
+        }
+
+        function enterWebsite() {
+            const name = visitorNameInput.value.trim();
+            if (!name) { nameError.textContent = 'Please enter your name.';
+                visitorNameInput.focus(); return; }
+            nameError.textContent = '';
+            localStorage.setItem('visitorName', name);
+            displayName.textContent = name;
+            typeGreeting(name);
+            welcomeScreen.classList.add('hide');
+            mainWebsite.classList.add('show');
+            setTimeout(() => { welcomeScreen.style.display = 'none'; }, 800);
+        }
+
+        proceedBtn.addEventListener('click', enterWebsite);
+        visitorNameInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') enterWebsite(); });
+
+        if (savedName) {
+            displayName.textContent = savedName;
+            window.addEventListener('load', () => { setTimeout(() => typeGreeting(savedName), 600); });
+        }
+
+        /* =========================================
+           MENU
+        ========================================= */
+        menuButton.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('open');
+            menuButton.classList.toggle('active');
+            menuButton.setAttribute('aria-expanded', isOpen);
+        });
+
+        function showPage(pageId) {
+            pages.forEach(p => p.classList.remove('active-page'));
+            const selected = document.getElementById(pageId);
+            if (selected) selected.classList.add('active-page');
+        }
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = link.getAttribute('href').replace('#', '');
+                showPage(id);
+                menu.classList.remove('open');
+                menuButton.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        /* =========================================
+           THEME
+        ========================================= */
+        let isDark = true;
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            document.body.classList.toggle('light-theme', !isDark);
+            themeToggle.innerHTML = isDark ? '<span>🌙</span><span id="themeLabel">Dark</span>' :
+                '<span>☀️</span><span id="themeLabel">Light</span>';
+            const label = themeToggle.querySelector('#themeLabel');
+            if (label) label.textContent = isDark ? 'Dark' : 'Light';
+        });
+
+        /* =========================================
+           BACK TO TOP
+        ========================================= */
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        /* =========================================
+           SHARE
+        ========================================= */
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({ title: 'Elly Enga | Personal Website', text: 'Check out Elly Enga\'s personal website!',
+                    url: window.location.href }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))
+                    .catch(() => prompt('Copy this link:', window.location.href));
+            }
+        });
+
+        /* =========================================
+           QUOTES
+        ========================================= */
+        const quotes = [
+            { text: 'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+            author: 'Winston Churchill' },
+            { text: 'Believe you can and you\'re halfway there.', author: 'Theodore Roosevelt' },
+            { text: 'The future depends on what you do today.', author: 'Mahatma Gandhi' },
+            { text: 'It always seems impossible until it\'s done.', author: 'Nelson Mandela' },
+            { text: 'Dream big. Work hard. Stay focused.', author: 'Unknown' },
+            { text: 'Do something today that your future self will thank you for.', author: 'Unknown' },
+            { text: 'Great things are done by a series of small things brought together.', author: 'Vincent van Gogh' },
+            { text: 'Don\'t watch the clock; do what it does. Keep going.', author: 'Sam Levenson' },
+            { text: 'Your limitation—it\'s only your imagination.', author: 'Unknown' },
+            { text: 'Small progress is still progress.', author: 'Unknown' }
+        ];
+        const quoteEl = document.getElementById('quote');
+        const quoteAuthorEl = document.getElementById('quoteAuthor');
+        let qIdx = 0;
+
+        function changeQuote() {
+            quoteEl.classList.add('fade');
+            setTimeout(() => {
+                qIdx = (qIdx + 1) % quotes.length;
+                quoteEl.textContent = `"${quotes[qIdx].text}"`;
+                quoteAuthorEl.textContent = `— ${quotes[qIdx].author}`;
+                quoteEl.classList.remove('fade');
+            }, 600);
+        }
+        setInterval(changeQuote, 5000);
+
+        /* =========================================
+           FUN FACT
+        ========================================= */
+        const funFacts = [
+            'I built this entire website from scratch in one day!',
+            'I love learning new programming languages.',
+            'My favorite color is blue, just like the theme of this site.',
+            'I started coding when I was 15 years old.',
+            'I believe technology should be used to solve real-world problems.',
+            'This website has 15+ features all in one page!',
+            'The chatbot can be trained to answer custom questions.',
+            'I have over 10 projects in my portfolio.',
+            'I’m self-taught in programming and web development.'
+        ];
+        setInterval(() => {
+            const el = document.getElementById('funFact');
+            el.innerHTML = `💡 <span>Did you know?</span> ${funFacts[Math.floor(Math.random() * funFacts.length)]}`;
+        }, 10000);
+
+        /* =========================================
+           ===== MASSIVE AI KNOWLEDGE BASE =====
+           Updated with new info: moms (Naomi & Rose), dream career (Medical Doctor), university (CBU/UNZA)
+        ========================================= */
+        const knowledgeBase = {
+
+            // ----- PERSONAL -----
+            'who is elly': 'Elly Enga is a passionate technologist, innovator, and creator from Zambia. He is self-taught in programming, web development, and AI. He built this entire website from scratch to share his journey, interests, and connect with others. He is deeply grateful for his family and friends who support him. His dream is to become a Medical Doctor.',
+            'elly': 'Elly Enga is a passionate technologist, innovator, and creator from Zambia. He is self-taught in programming, web development, and AI. His dream is to become a Medical Doctor.',
+            'about elly': 'Elly Enga is a tech enthusiast, self-taught programmer, and creative thinker. He loves building things — websites, chatbots, games, and more. He believes in the power of technology to change lives and is on a mission to become a Medical Doctor while also exploring tech.',
+            'elly enga': 'Elly Enga is the creator of this website. He is a self-taught developer, tech enthusiast, and lifelong learner from Zambia, with a dream of becoming a Medical Doctor.',
+            'my name is elly': 'Yes! You are Elly Enga — a passionate technologist, innovator, and creator.',
+            'introduce yourself': 'Hi! I\'m Elly Enga. I\'m a self-taught programmer, web developer, and AI enthusiast from Zambia. I love building things, learning new technologies, and I dream of becoming a Medical Doctor. This website is my digital home!',
+            'tell me about yourself': 'I\'m Elly Enga, a passionate technologist from Zambia. I\'m self-taught in programming, web development, and AI. I built this website to share my story, projects, and connect with people. I love learning, creating, and my ultimate goal is to become a Medical Doctor.',
+            'who are you': 'I\'m Elly Enga — a tech enthusiast, self-taught developer, and creative thinker from Zambia. I dream of studying Medicine and becoming a doctor.',
+               // ----- BACKGROUND -----
+            'background': 'Elly Enga comes from a humble background. He has faced many challenges, including not having a laptop and limited formal education in technology. Despite this, he has taught himself programming, web development, and AI through online resources, sheer determination, and a passion for learning. He is determined to become a Medical Doctor.',
+            'humble background': 'Elly comes from a humble background. He has faced challenges like lack of resources and formal tech education, but he has persevered through self-learning and determination.',
+            'where is elly from': 'Elly Enga is from Zambia, Africa.',
+            'zambia': 'Yes! Elly Enga is from Zambia, a country in Southern Africa. He is proud of his heritage and roots.',
+            'from zambia': 'Elly Enga is proudly from Zambia, a beautiful country in Southern Africa.',
+
+            // ----- EDUCATION & DREAM -----
+            'education': 'Elly attended Chile Primary School for his primary education, then Don Bosco Secondary School for his secondary education. He plans to study Medicine at CBU or UNZA to become a Medical Doctor. Additionally, he is self-taught in technology, programming, web development, and AI.',
+            'primary education': 'Elly attended Chile Primary School, where he built the foundation for learning, creativity, mathematics, science, and communication.',
+            'secondary education': 'Elly attended Don Bosco Secondary School — a period of deeper academic learning and personal development.',
+            'university': 'Elly plans to study Medicine at CBU (Copperbelt University) or UNZA (University of Zambia) to become a Medical Doctor.',
+            'cbu': 'CBU stands for Copperbelt University. Elly wants to study Medicine there.',
+            'unza': 'UNZA stands for University of Zambia. Elly wants to study Medicine there.',
+            'medical doctor': 'Elly\'s dream is to become a Medical Doctor. He wants to study Medicine at CBU or UNZA and serve his community.',
+            'doctor': 'Elly dreams of becoming a Medical Doctor. He is working hard to achieve this goal.',
+            'dream career': 'Elly\'s dream career is to become a Medical Doctor. He wants to study Medicine at CBU or UNZA.',
+            'self learning': 'Elly is self-taught in programming, web development, and AI. He learns through online resources, tutorials, and hands-on projects. Despite lacking resources like a laptop, he has built this website and many other projects.',
+            'self-taught': 'Elly is self-taught in programming, web development, and AI. He learned through online resources, tutorials, and trial and error.',
+            'school': 'Elly went to Chile Primary School and Don Bosco Secondary School. He now aims to study Medicine at CBU or UNZA.',
+            'chile primary': 'Chile Primary School is where Elly started his education. He built his foundation there.',
+            'don bosco': 'Don Bosco Secondary School is where Elly completed his secondary education.',
+            'what did elly study': 'Elly studied general subjects at primary and secondary school. He now wants to study Medicine at university.',
+
+            // ----- CAREER & SKILLS -----
+            'career': 'Elly is a junior developer working on web development projects. He is passionate about technology, innovation, and building solutions that make a difference. He has experience in HTML, CSS, JavaScript, React, Python, and UI/UX design. His ultimate career goal is to become a Medical Doctor.',
+            'skills': 'Elly\'s skills include HTML, CSS, JavaScript, React, Python, UI/UX design, web development, and AI. He is continuously learning and improving.',
+            'html': 'Elly knows HTML and CSS very well — he built this entire website from scratch using them!',
+            'css': 'Elly knows CSS well and uses it to style beautiful, responsive websites.',
+            'javascript': 'Elly knows JavaScript and uses it to build interactive features like the chatbot, quiz game, and dynamic content on this website.',
+            'react': 'Elly is learning React and can build basic React applications. He\'s currently at about 40% proficiency.',
+            'python': 'Elly knows Python and uses it for various projects. He\'s currently at about 35% proficiency.',
+            'ui/ux': 'Elly has a strong interest in UI/UX design and focuses on creating clean, user-friendly interfaces. He\'s at about 65% proficiency.',
+            'web developer': 'Elly is a web developer who builds websites and web applications using HTML, CSS, and JavaScript.',
+            'programmer': 'Elly is a programmer who knows multiple languages including JavaScript, Python, and more.',
+
+            // ----- PROJECTS -----
+            'projects': 'Elly has built several projects including: this personal website, an AI chatbot, a data dashboard, and a quiz game. He is always working on new ideas and learning new technologies.',
+            'personal website': 'Elly built this entire website from scratch using HTML, CSS, and JavaScript. It\'s a space to share his journey, projects, and connect with others.',
+            'chatbot': 'Elly built an interactive AI chatbot that responds to user queries. It can be trained to answer custom questions using the !train command.',
+            'data dashboard': 'Elly built a data visualization project that transforms raw data into interactive charts and insights using JavaScript libraries.',
+            'quiz game': 'Elly built a fun quiz game about himself — it tests your knowledge about his life, interests, and journey. It\'s interactive and educational!',
+            'what has elly built': 'Elly has built a personal website, an AI chatbot, a data dashboard, and a quiz game. He\'s always working on new projects!',
+
+            // ----- FAMILY (UPDATED) -----
+            'family': 'Elly has a wonderful family. His mother is Sister Rose Chilamo, and his other mother is Naomi Chishimba. He has brothers: Albert Enga, Albert Kashiya, Chomba Christopher, and Elias Kabaso. He also has a sister, Ethel Ng\'adwe. They are his pillars of support.',
+            'mother': 'Elly has two mothers: Sister Rose Chilamo and Naomi Chishimba. They are both incredible women who have supported him immensely.',
+            'mom': 'Elly has two moms: Sister Rose Chilamo and Naomi Chishimba. They are his pillars of love, strength, and encouragement.',
+            'rose': 'Sister Rose Chilamo is Elly\'s mother. She has been an incredible support, helping him countless times on his journey. He is deeply grateful for her.',
+            'naomi': 'Naomi Chishimba is Elly\'s mother. She has been a pillar of love and support for him.',
+            'brother': 'Elly has several brothers: Albert Enga, Albert Kashiya, Chomba Christopher, and Elias Kabaso. They are his brothers and he loves them dearly.',
+            'albert': 'Albert is Elly\'s brother. He has two brothers named Albert — Albert Enga and Albert Kashiya.',
+            'chomba': 'Chomba Christopher is Elly\'s brother.',
+            'elias': 'Elias Kabaso is Elly\'s brother.',
+            'sister': 'Ethel Ng\'adwe is Elly\'s sister.',
+            'ethel': 'Ethel Ng\'adwe is Elly\'s sister.',
+            'grandma': 'Elly\'s grandmother is a beloved family member. He has a photo with her in the gallery.',
+            'mbuya': 'Mbuya is the Shona word for grandmother. Elly loves his grandmother very much.',
+            'who is in ellys family': 'Elly\'s family includes his mothers Sister Rose Chilamo and Naomi Chishimba, his brothers Albert Enga, Albert Kashiya, Chomba Christopher, and Elias Kabaso, and his sister Ethel Ng\'adwe. He also has a beloved grandmother.',
+
+            // ----- MARIE -----
+            'marie': 'Marie is a wonderful and kind person who has helped Elly immensely. She appreciates him, supports him, and does thoughtful things for him. Elly is deeply grateful to her and sincerely appreciates everything she does. ❤️',
+            'who is marie': 'Marie is a wonderful person in Elly\'s life. She is kind, appreciative, and supportive. Elly is very grateful for her and everything she does for him. ❤️',
+            'who is marie to elly': 'Marie is a very special person to Elly. She is kind, supportive, and appreciative of him. Elly deeply values her and is grateful for all she does. ❤️',
+            'tell me about marie': 'Marie is a wonderful, kind-hearted person who has supported Elly in many ways. She appreciates him and does thoughtful things for him. Elly holds her in high regard and is very grateful for her presence in his life. ❤️',
+
+            // ----- CHALLENGES -----
+            'challenge': 'Elly has faced many challenges, including not having a laptop, limited formal education in technology, and financial constraints. Despite these, he has persisted through self-learning, determination, and creativity. He believes that challenges make you stronger.',
+            'challenges': 'Elly\'s biggest challenges are: (1) not having a laptop — he builds everything using borrowed devices or mobile phones, (2) limited formal education in tech — he is self-taught, and (3) financial constraints. He has overcome these with resilience and determination.',
+            'no laptop': 'Elly does not have a laptop. He has built this website, learned to code, and worked on projects using borrowed devices or mobile phones. It\'s a constant struggle, but it has taught him resilience and creativity.',
+            'laptop': 'Elly does not have a laptop. He dreams of owning his own machine to take his skills to the next level.',
+            'limited education': 'Elly hasn\'t had a formal education in computer science or technology. Everything he knows is self-taught through online resources, trial and error, and sheer determination.',
+            'financial': 'Elly has faced financial constraints, but he has never let that stop him from learning and building.',
+            'struggles': 'Elly\'s main struggles are lack of resources (especially a laptop) and limited formal education in tech. But he doesn\'t let that stop him — he\'s self-taught and determined.',
+
+            // ----- INTERESTS -----
+            'interests': 'Elly is interested in technology, programming, artificial intelligence, innovation, robotics, creative projects, web development, data science, UI/UX design, and medicine.',
+            'hobbies': 'Elly\'s hobbies include coding, building websites, exploring AI, playing games, learning new technologies, and reading about medicine.',
+            'technology': 'Elly loves technology and is passionate about using it to solve real-world problems.',
+            'ai': 'Elly is fascinated by artificial intelligence. He built a chatbot for this website and is exploring AI applications.',
+            'programming': 'Elly loves programming. He knows HTML, CSS, JavaScript, React, and Python, and is always learning more.',
+            'robotics': 'Elly is interested in robotics and the intersection of hardware and software.',
+            'innovation': 'Elly is passionate about innovation — creating new solutions and pushing boundaries.',
+            'web development': 'Elly is a web developer. He built this entire website from scratch and loves creating beautiful, functional interfaces.',
+            'data science': 'Elly is interested in data science and has built a data dashboard project.',
+            'what does elly like': 'Elly likes technology, programming, AI, innovation, robotics, web development, data science, UI/UX design, and medicine.',
+
+            // ----- SOCIAL MEDIA -----
+            'instagram': 'You can follow Elly on Instagram: @elly_enga',
+            'tiktok': 'Check out Elly on TikTok: @kleempwrld',
+            'facebook': 'Elly\'s Facebook page is called Kleempwrld. You can find him there!',
+            'whatsapp': 'Elly\'s WhatsApp number is +260 96 155 0967. Feel free to reach out!',
+            'social media': 'Elly is on Instagram (@elly_enga), TikTok (@kleempwrld), Facebook (Kleempwrld), and WhatsApp (+260 96 155 0967).',
+
+            // ----- WEBSITE -----
+            'website': 'You are on Elly\'s personal website, built from scratch with HTML, CSS, and JavaScript. It features a home page, about me, education, career, gallery, videos, chatbot, quiz game, blog, testimonials, challenges, and contact sections.',
+            'this website': 'This website is Elly\'s personal space on the internet. It\'s built entirely from scratch using HTML, CSS, and JavaScript. It includes 12+ sections, an AI chatbot, a quiz game, a music player, and more!',
+            'features': 'This website features: a welcome screen, home page with quotes, about section, education timeline, career section with skills and projects, photo gallery, video gallery, AI chatbot, quiz game, blog, testimonials, challenges & appreciation, contact with Discord webhook, music player, dark/light theme, and more!',
+
+            // ----- QUOTES & INSPIRATION -----
+            'quote': 'The homepage features a rotating set of inspirational quotes. One of Elly\'s favorites is: "Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill',
+            'inspiration': 'Elly is inspired by innovators, creators, and people who overcome adversity. He believes in perseverance, hard work, and the power of technology to change lives.',
+
+            // ----- GAME -----
+            'game': 'Elly has built a fun quiz game about himself! It\'s in the "Quiz Game" section. Test your knowledge about his life, interests, and journey. There are 50 questions — see how many you can get right!',
+            'quiz': 'The quiz game is a fun way to learn about Elly. It has 50 questions covering his life, education, family, interests, and challenges. Try it out!',
+
+            // ----- CONTACT -----
+            'contact': 'You can contact Elly via WhatsApp (+260 96 155 0967), Facebook (Kleempwrld), Instagram (@elly_enga), TikTok (@kleempwrld), or through the contact form on this website. He would love to hear from you!',
+
+            // ----- APPRECIATION -----
+            'appreciation': 'Elly deeply appreciates his mothers (Sister Rose Chilamo and Naomi Chishimba), his brothers (Albert Enga, Albert Kashiya, Chomba Christopher, Elias Kabaso), his sister (Ethel Ng\'adwe), his grandmother, Marie, and Sister Priscah. They are his pillars of support and love. ❤️',
+            'grateful': 'Elly is incredibly grateful for all the people who have supported him — especially his moms, brothers, sister, grandma, Marie, and Sister Priscah. They have believed in him and helped him along the way.',
+
+            // ----- FUN FACTS -----
+            'fun fact': 'Elly built this entire website from scratch in one day! He also started coding when he was 15 years old and is completely self-taught. His dream is to become a Medical Doctor.',
+            'did you know': 'Did you know? Elly built this entire website from scratch in one day! He is self-taught in programming and started coding at age 15. He dreams of becoming a doctor.',
+
+            // ----- DREAMS -----
+            'dream': 'Elly\'s biggest dream is to become a Medical Doctor. He wants to study Medicine at CBU or UNZA and serve his community. He also dreams of owning his own laptop to further his tech skills.',
+            'goal': 'Elly\'s goal is to become a Medical Doctor, while also continuing to explore technology and innovation.',
+            'ambition': 'Elly\'s ambition is to become a Medical Doctor and use his skills to help others. He also wants to inspire others to pursue their dreams despite challenges.',
+        };
+
+        /* =========================================
+           CHATBOT — Enhanced with better matching
+        ========================================= */
+        const chatInput = document.getElementById('chatInput');
+        const sendChat = document.getElementById('sendChat');
+        const chatMessages = document.getElementById('chatMessages');
+
+        // Build keyword map for fuzzy matching
+        const keywordMap = {};
+        for (const [key, value] of Object.entries(knowledgeBase)) {
+            const words = key.split(/\s+/);
+            words.forEach(word => {
+                const clean = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+                if (clean.length > 2) {
+                    if (!keywordMap[clean]) keywordMap[clean] = [];
+                    keywordMap[clean].push({ key, value, length: key.length });
+                }
+            });
+        }
+        function normalizeQuery(text) {
+            let normalized = text.toLowerCase().trim();
+            const typoMap = {
+                'elly': 'elly',
+                'eng': 'enga',
+                'engga': 'enga',
+                'ellys': 'elly',
+                'abot': 'about',
+                'eduction': 'education',
+                'carreer': 'career',
+                'skils': 'skills',
+                'intrests': 'interests',
+                'famly': 'family',
+                'chalenge': 'challenge',
+                'challnges': 'challenges',
+                'apreciation': 'appreciation',
+                'gratefull': 'grateful',
+                'mariee': 'marie',
+                'mari': 'marie',
+                'rosea': 'rose',
+                'naomie': 'naomi',
+                'albertte': 'albert',
+                'chombaa': 'chomba',
+                'eliass': 'elias',
+                'ethela': 'ethel',
+                'whatsappp': 'whatsapp',
+                'instgram': 'instagram',
+                'tiktokk': 'tiktok',
+                'facebok': 'facebook',
+                'websit': 'website',
+                'webstie': 'website',
+                'chatbot': 'chatbot',
+                'bot': 'chatbot',
+                'quize': 'quiz',
+                'quizz': 'quiz',
+                'unza': 'unza',
+                'cbu': 'cbu',
+            };
+            for (const [typo, correct] of Object.entries(typoMap)) {
+                normalized = normalized.replace(new RegExp(typo, 'g'), correct);
+            }
+            return normalized;
+        }
+
+        function getBestResponse(message) {
+            const lowerMsg = normalizeQuery(message);
+            if (!lowerMsg) return "I didn't quite catch that. Could you try asking something else?";
+
+            // 1. Get all matches from knowledge base
+            const matches = [];
+            for (const [key, value] of Object.entries(knowledgeBase)) {
+                const keyLower = key.toLowerCase();
+                if (lowerMsg.includes(keyLower) || keyLower.includes(lowerMsg)) {
+                    matches.push({ key: keyLower, value, length: keyLower.length, exact: lowerMsg.includes(keyLower) });
+                }
+            }
+
+            // 2. Sort by specificity: exact match first, then longest key
+            matches.sort((a, b) => {
+                if (a.exact && !b.exact) return -1;
+                if (!a.exact && b.exact) return 1;
+                return b.length - a.length;
+            });
+
+            if (matches.length > 0) {
+                return matches[0].value;
+            }
+
+            // 3. Check trained data
+            const trainedData = JSON.parse(localStorage.getItem('chatbot_trained') || '{}');
+            const trainedMatches = [];
+            for (const [key, value] of Object.entries(trainedData)) {
+                if (lowerMsg.includes(key) || key.includes(lowerMsg)) {
+                    trainedMatches.push({ key, value, length: key.length });
+                }
+            }
+            trainedMatches.sort((a, b) => b.length - a.length);
+            if (trainedMatches.length > 0) return trainedMatches[0].value;
+
+            // 4. Fuzzy keyword matching
+            const words = lowerMsg.split(/\s+/);
+            let bestMatch = null;
+            let bestScore = 0;
+            for (const word of words) {
+                const clean = word.replace(/[^a-z0-9]/g, '');
+                if (clean.length > 2 && keywordMap[clean]) {
+                    for (const entry of keywordMap[clean]) {
+                        const score = entry.key.split(/\s+/).filter(w => words.includes(w)).length;
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMatch = entry.value;
+                        }
+                    }
+                }
+            }
+            if (bestMatch) return bestMatch;
+
+            // 5. Greetings
+            if (/(hello|hi|hey|howdy|greetings|yo|sup)/i.test(lowerMsg)) {
+                return "Hello 👋 How can I help you today? You can ask me about Elly, his education, career, family, interests, or the website!";
+            }
+            if (/(how are you|how're you|how are ya)/i.test(lowerMsg)) {
+                return "I'm doing great, thanks for asking! 😊 I'm here to help you learn about Elly. What would you like to know?";
+            }
+            if (/(thank|thanks|thx|ty)/i.test(lowerMsg)) {
+                return "You're very welcome! 😊 I'm glad I could help. Feel free to ask me anything else about Elly!";
+            }
+            if (/(bye|goodbye|see you|later|peace)/i.test(lowerMsg)) {
+                return "Goodbye! 👋 It was nice chatting with you. Come back anytime to learn more about Elly!";
+            }
+
+            // 6. Suggest topics
+            const suggestions = [
+                'Who is Elly?',
+                'Tell me about Elly\'s education',
+                'What are Elly\'s interests?',
+                'Who is Marie to Elly?',
+                'What challenges has Elly faced?',
+                'Tell me about Elly\'s family',
+                'What is Elly\'s dream career?',
+                'Which university does Elly want to attend?'
+            ];
+            const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+            return `Hmm, I don't have a specific answer for that. 🤔 Here's something you could ask me: "${randomSuggestion}" — or use !train question | answer to teach me something new!`;
+        }
+
+        function addChatMessage(text, type) {
+            const msg = document.createElement('div');
+            msg.className = type === 'user' ? 'user-message' : 'bot-message';
+            msg.textContent = text;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            if (message.startsWith('!train ')) {
+                const parts = message.substring(7).split('|');
+                if (parts.length === 2) {
+                    const question = parts[0].trim();
+                    const answer = parts[1].trim();
+                    if (question && answer) {
+                        const trainedData = JSON.parse(localStorage.getItem('chatbot_trained') || '{}');
+                        trainedData[question.toLowerCase()] = answer;
+                        localStorage.setItem('chatbot_trained', JSON.stringify(trainedData));
+                        addChatMessage(message, 'user');
+                        chatInput.value = '';
+                        addChatMessage(`✅ Got it! I've learned that "${question}" -> "${answer}"`, 'bot');
+                        return;
+                    }
+                }
+                addChatMessage(message, 'user');
+                chatInput.value = '';
+                addChatMessage('❌ Oops! Use the format: !train question | answer', 'bot');
+                return;
+            }
+
+            if (message === '!forget all') {
+                localStorage.removeItem('chatbot_trained');
+                addChatMessage(message, 'user');
+                chatInput.value = '';
+                addChatMessage('🧠 I\'ve forgotten everything I learned. Back to default knowledge.', 'bot');
+                return;
+            }
+
+            addChatMessage(message, 'user');
+            chatInput.value = '';
+
+            setTimeout(() => {
+                const reply = getBestResponse(message);
+                addChatMessage(reply, 'bot');
+            }, 300);
+        }
+
+        sendChat.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+        // Suggestion chips
+        document.querySelectorAll('.suggestion-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                chatInput.value = chip.getAttribute('data-question');
+                sendMessage();
+            });
+        });
+
+        /* =========================================
+           FLOATING CHAT
+        ========================================= */
+        document.getElementById('floatingChat').addEventListener('click', () => {
+            showPage('chatbot');
+            menu.classList.remove('open');
+            menuButton.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* =========================================
+           QUIZ GAME — 50 Questions
+        ========================================= */
+        // Generate 50 questions covering all aspects
+        function generateQuizQuestions() {
+            const qs = [];
+
+            // Personal (10)
+            qs.push({ q: "What is Elly's full name?", o: ["Elly Enga", "Elly Chomba", "Elly Kashiya", "Elly Kabaso"],
+                c: 0, e: "Elly's full name is Elly Enga." });
+            qs.push({ q: "Where is Elly from?", o: ["Zambia", "Kenya", "South Africa", "Nigeria"], c: 0,
+                e: "Elly is from Zambia." });
+            qs.push({ q: "What is Elly's dream career?", o: ["Medical Doctor", "Engineer", "Teacher", "Lawyer"], c: 0,
+                e: "Elly dreams of becoming a Medical Doctor." });
+            qs.push({ q: "How did Elly learn to code?", o: ["Self-taught", "University", "Bootcamp", "High school"],
+                c: 0, e: "Elly is completely self-taught." });
+            qs.push({ q: "What color does Elly like?", o: ["Blue", "Red", "Green", "Yellow"], c: 0,
+                e: "Elly's favorite color is blue." });
+            qs.push({ q: "How old was Elly when he started coding?", o: ["10", "12", "15", "18"], c: 2,
+                e: "Elly started coding at 15." });
+            qs.push({ q: "What is Elly's motto?", o: ["Keep going", "Give up", "Take it easy", "Wait for help"], c: 0,
+                e: "Elly's motto is 'Keep going'." });
+            qs.push({ q: "What does Elly value most?", o: ["Family", "Money", "Fame", "Power"], c: 0,
+                e: "Elly values his family most." });
+            qs.push({ q: "What is Elly's nationality?", o: ["Zambian", "Kenyan", "South African", "Nigerian"], c: 0,
+                e: "Elly is Zambian." });
+            qs.push({ q: "What drives Elly?", o: ["Curiosity", "Money", "Fame", "Power"], c: 0,
+                e: "Elly is driven by curiosity." });
+
+            // Education & Dream (8)
+            qs.push({ q: "Which primary school did Elly attend?", o: ["Chile Primary", "Don Bosco", "University",
+                    "None"
+                ], c: 0, e: "Elly attended Chile Primary." });
+            qs.push({ q: "Which secondary school did Elly attend?", o: ["Chile Primary", "Don Bosco Secondary",
+                    "University", "None"
+                ], c: 1, e: "Elly attended Don Bosco Secondary." });
+            qs.push({ q: "Which university does Elly want to study Medicine at?", o: ["CBU or UNZA", "Harvard",
+                    "Oxford", "None"
+                ], c: 0, e: "Elly wants to study at CBU or UNZA." });
+            qs.push({ q: "What does Elly want to become?", o: ["Medical Doctor", "Engineer", "Teacher", "Lawyer"],
+                c: 0, e: "Elly wants to become a Medical Doctor." });
+            qs.push({ q: "Is Elly self-taught in tech?", o: ["Yes", "No", "Maybe", "Not sure"], c: 0,
+                e: "Yes, Elly is self-taught in tech." });
+            qs.push({ q: "What does Elly plan to study at university?", o: ["Medicine", "Computer Science", "Law",
+                    "Engineering"
+                ], c: 0, e: "Elly plans to study Medicine." });
+            qs.push({ q: "What is Elly's current education level?", o: ["University student", "High school",
+                    "Primary", "Graduate"
+                ], c: 0, e: "Elly is a university student." });
+            qs.push({ q: "What did Elly learn at Chile Primary?", o: ["Foundation skills", "Advanced programming",
+                    "Medicine", "Law"
+                ], c: 0, e: "Elly built his foundation at Chile Primary." });
+
+            // Family (10)
+            qs.push({ q: "Who is Elly's mother?", o: ["Sister Rose Chilamo", "Naomi Chishimba", "Marie", "Priscah"],
+                c: 0, e: "Elly's mother is Sister Rose Chilamo." });
+            qs.push({ q: "Who is Elly's other mother?", o: ["Sister Rose Chilamo", "Naomi Chishimba", "Marie",
+                    "Priscah"
+                ], c: 1, e: "Elly's other mother is Naomi Chishimba." });
+            qs.push({ q: "How many brothers does Elly have?", o: ["2", "3", "4", "5"], c: 2,
+                e: "Elly has 4 brothers." });
+            qs.push({ q: "What are the names of Elly's brothers?", o: ["Albert, Chomba, Elias", "John, Peter, Paul",
+                    "James, Mark, Luke", "None"
+                ], c: 0, e: "Elly's brothers are Albert Enga, Albert Kashiya, Chomba Christopher, and Elias Kabaso." });
+            qs.push({ q: "What is Elly's sister's name?", o: ["Ethel Ng'adwe", "Marie", "Priscah", "Naomi"], c: 0,
+                e: "Elly's sister is Ethel Ng'adwe." });
+            qs.push({ q: "Who is Albert to Elly?", o: ["Brother", "Father", "Friend", "Cousin"], c: 0,
+                e: "Albert is Elly's brother." });
+            qs.push({ q: "Who is Chomba to Elly?", o: ["Brother", "Father", "Friend", "Cousin"], c: 0,
+                e: "Chomba is Elly's brother." });
+            qs.push({ q: "Who is Elias to Elly?", o: ["Brother", "Father", "Friend", "Cousin"], c: 0,
+                e: "Elias is Elly's brother." });
+            qs.push({ q: "Who is Ethel to Elly?", o: ["Sister", "Mother", "Friend", "Cousin"], c: 0,
+                e: "Ethel is Elly's sister." });
+            qs.push({ q: "Does Elly have a grandmother?", o: ["Yes", "No", "Maybe", "Not sure"], c: 0,
+                e: "Yes, Elly has a grandmother." });
+
+            // Challenges (6)
+            qs.push({ q: "What is Elly's biggest challenge?", o: ["No laptop", "No internet", "No school", "No friends"],
+                c: 0, e: "Elly's biggest challenge is no laptop." });
+            qs.push({ q: "How does Elly build projects?", o: ["Borrowed devices", "His own laptop", "School computers",
+                    "None"
+                ], c: 0, e: "Elly uses borrowed devices." });
+            qs.push({ q: "Does Elly have a laptop?", o: ["No", "Yes", "Maybe", "Not sure"], c: 0,
+                e: "Elly does not have a laptop." });
+            qs.push({ q: "What has Elly's lack of laptop taught him?", o: ["Resilience", "Giving up", "Complaining",
+                    "Fear"
+                ], c: 0, e: "It taught him resilience." });
+            qs.push({ q: "Does Elly have formal tech education?", o: ["No", "Yes", "Maybe", "Not sure"], c: 0,
+                e: "Elly has no formal tech education." });
+            qs.push({ q: "What does Elly believe about challenges?", o: ["They make you stronger", "They stop you",
+                    "They are bad", "They don't matter"
+                ], c: 0, e: "Elly believes challenges make you stronger." });
+
+            // Skills & Projects (6)
+            qs.push({ q: "What programming languages does Elly know?", o: ["JavaScript, Python", "Only HTML",
+                    "Only CSS", "None"
+                ], c: 0, e: "Elly knows JavaScript and Python." });
+            qs.push({ q: "What is Elly's skill level in UI/UX?", o: ["65%", "10%", "90%", "50%"], c: 0,
+                e: "Elly is at 65% in UI/UX." });
+            qs.push({ q: "What has Elly built?", o: ["This website, chatbot, quiz game", "Only a website",
+                    "Only a game", "Nothing"
+                ], c: 0, e: "Elly has built this website, a chatbot, and a quiz game." });
+            qs.push({ q: "What is the name of Elly's website?", o: ["Personal Website", "TechBlog", "MyApp", "GameHub"],
+                c: 0, e: "It's called Elly Enga | Personal Website." });
+            qs.push({ q: "What does Elly's chatbot do?", o: ["Answer questions", "Play games", "Sing songs",
+                    "Tell jokes"
+                ], c: 0, e: "The chatbot answers questions about Elly." });
+            qs.push({ q: "What is Elly's quiz game about?", o: ["Elly himself", "Technology", "Sports", "Movies"],
+                c: 0, e: "The quiz game is about Elly's life." });
+
+            // Interests (4)
+            qs.push({ q: "What is Elly's main interest?", o: ["Technology", "Sports", "Music", "Art"], c: 0,
+                e: "Elly's main interest is technology." });
+            qs.push({ q: "What field is Elly fascinated by?", o: ["AI", "Medicine", "Law", "History"], c: 0,
+                e: "Elly is fascinated by AI." });
+            qs.push({ q: "What does Elly love to do?", o: ["Build things", "Sleep", "Eat", "Watch TV"], c: 0,
+                e: "Elly loves building things." });
+            qs.push({ q: "What does Elly like to explore?", o: ["New technologies", "Old technologies", "History",
+                    "Geography"
+                ], c: 0, e: "Elly likes exploring new technologies." });
+
+            // Social Media (4)
+            qs.push({ q: "What is Elly's Instagram handle?", o: ["@elly_enga", "@elly_engaa", "@ellyenga",
+                    "@elly_eng"
+                ], c: 0, e: "Elly's Instagram is @elly_enga." });
+            qs.push({ q: "What is Elly's TikTok handle?", o: ["@kleempwrld", "@elly_enga", "@ellyengaa", "@ellyworld"],
+                c: 0, e: "Elly's TikTok is @kleempwrld." });
+            qs.push({ q: "What is Elly's Facebook page?", o: ["Kleempwrld", "Elly Enga", "TechElly", "EllyWorld"],
+                c: 0, e: "Elly's Facebook is Kleempwrld." });
+            qs.push({ q: "What is Elly's WhatsApp number?", o: ["+260 96 155 0967", "+260 97 155 0967",
+                    "+260 95 155 0967", "+260 94 155 0967"
+                ], c: 0, e: "Elly's WhatsApp is +260 96 155 0967." });
+
+            // Appreciation (2)
+            qs.push({ q: "Who does Elly appreciate most?", o: ["His moms and Marie", "Only his mom", "Only Marie",
+                    "No one"
+                ], c: 0, e: "Elly appreciates his moms, Marie, and his family." });
+            qs.push({ q: "What does Elly say about Marie?", o: ["She is wonderful", "She is okay", "She is mean",
+                    "She is strict"
+                ], c: 0, e: "Elly says Marie is wonderful. ❤️" });
+                  // Ensure exactly 50
+            while (qs.length < 50) {
+                qs.push({ q: `What is one of Elly's interests?`, o: ["Technology", "Sports", "Music", "Art"], c: 0,
+                    e: "Elly is interested in technology." });
+            }
+
+            return qs;
+        }
+
+        let quizQuestions = generateQuizQuestions();
+        let currentQIndex = 0;
+        let quizScore = 0;
+        let quizAnswered = false;
+        let quizStarted = false;
+
+        const qText = document.getElementById('questionText');
+        const qOptions = document.getElementById('quizOptions');
+        const qProgress = document.getElementById('quizProgress');
+        const qScoreEl = document.getElementById('quizScore');
+        const qFeedback = document.getElementById('gameFeedback');
+        const nextBtn = document.getElementById('nextQuestionBtn');
+        const resetBtn = document.getElementById('gameResetBtn');
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        let shuffledQuestions = shuffleArray([...quizQuestions]);
+
+        function renderQuizQuestion() {
+            if (currentQIndex >= shuffledQuestions.length) {
+                qText.textContent = `🎉 Quiz Complete! You scored ${quizScore} out of ${shuffledQuestions.length}!`;
+                qOptions.innerHTML = '';
+                qFeedback.textContent = quizScore === shuffledQuestions.length ?
+                    '🌟 Perfect score! You know Elly inside out!' :
+                    `💪 ${quizScore >= 35 ? 'Great job!' : 'Good effort!'} Learn more about Elly by exploring the site.`;
+                qFeedback.style.color = '#6fcf97';
+                nextBtn.style.display = 'none';
+                document.querySelector('.quiz-progress').textContent = '🎉 Done!';
+                qScoreEl.textContent = quizScore;
+                return;
+            }
+
+            const q = shuffledQuestions[currentQIndex];
+            qText.textContent = q.q;
+            qProgress.textContent = `Question ${currentQIndex + 1} / ${shuffledQuestions.length}`;
+            qScoreEl.textContent = quizScore;
+            qFeedback.textContent = '';
+            qFeedback.style.color = '#ddd';
+            nextBtn.style.display = 'none';
+            quizAnswered = false;
+
+            const labels = ['A', 'B', 'C', 'D'];
+            qOptions.innerHTML = '';
+            q.o.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.innerHTML = `<span class="option-label">${labels[idx]}.</span> ${opt}`;
+                btn.dataset.index = idx;
+                btn.addEventListener('click', () => handleQuizAnswer(idx));
+                qOptions.appendChild(btn);
+            });
+        }
+
+        function handleQuizAnswer(selected) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+
+            const q = shuffledQuestions[currentQIndex];
+            const buttons = qOptions.querySelectorAll('.quiz-option');
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+                if (idx === q.c) btn.classList.add('correct');
+                else if (idx === selected && idx !== q.c) btn.classList.add('wrong');
+            });
+
+            if (selected === q.c) {
+                quizScore++;
+                qFeedback.textContent = '✅ Correct! ' + q.e;
+                qFeedback.style.color = '#6fcf97';
+            } else {
+                qFeedback.textContent = '❌ Oops! ' + q.e;
+                qFeedback.style.color = '#ff6b6b';
+            }
+
+            qScoreEl.textContent = quizScore;
+            nextBtn.style.display = 'inline-block';
+            if (currentQIndex === shuffledQuestions.length - 1) {
+                nextBtn.textContent = '🏆 See Results';
+            } else {
+                nextBtn.textContent = 'Next Question →';
+            }
+        }
+
+        function nextQuizQuestion() {
+            if (currentQIndex < shuffledQuestions.length - 1) {
+                currentQIndex++;
+                renderQuizQuestion();
+            } else {
+                currentQIndex++;
+                renderQuizQuestion();
+            }
+        }
+
+        function resetQuiz() {
+            shuffledQuestions = shuffleArray([...quizQuestions]);
+            currentQIndex = 0;
+            quizScore = 0;
+            quizAnswered = false;
+            quizStarted = true;
+            qScoreEl.textContent = '0';
+            nextBtn.textContent = 'Next Question →';
+            renderQuizQuestion();
+        }
+
+        nextBtn.addEventListener('click', nextQuizQuestion);
+        resetBtn.addEventListener('click', resetQuiz);
+        resetQuiz();
+
+        document.querySelector('a[href="#game"]')?.addEventListener('click', () => { setTimeout(resetQuiz, 200); });
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+        const contactName = document.getElementById('contactName');
+        const contactEmail = document.getElementById('contactEmail');
+        const contactMessage = document.getElementById('contactMessage');
+        const contactStatus = document.getElementById('contactStatus');
+
+        function buildContactData() {
+            const name = contactName.value.trim();
+            const email = contactEmail.value.trim();
+            const msg = contactMessage.value.trim();
+            if (!name || !email || !msg) {
+                contactStatus.textContent = 'Please fill in all fields.';
+                contactStatus.style.color = '#ff6b6b';
+                return null;
+            }
+            contactStatus.textContent = '';
+            return { name, email, msg };
+        }
+
+        document.getElementById('sendWhatsApp').addEventListener('click', () => {
+            const data = buildContactData();
+            if (!data) return;
+            const text = `Name: ${data.name}%0AEmail: ${data.email}%0A%0A${data.msg}`;
+            window.open(`https://wa.me/260961550967?text=${text}`, '_blank');
+            contactStatus.textContent = '✅ Opening WhatsApp...';
+            contactStatus.style.color = '#6fcf97';
+        });
+
+        document.getElementById('sendFacebook').addEventListener('click', () => {
+            const data = buildContactData();
+            if (!data) return;
+            const text = `Name: ${data.name}%0AEmail: ${data.email}%0A%0A${data.msg}`;
+            window.open(`https://www.facebook.com/messages/t/Kleempwrld?text=${text}`, '_blank');
+            contactStatus.textContent = '✅ Opening Facebook Messenger...';
+            contactStatus.style.color = '#6fcf97';
+        });
+
+        document.getElementById('sendDiscord').addEventListener('click', async () => {
+            const data = buildContactData();
+            if (!data) return;
+            const content =
+                `📨 **New Contact Message**\n👤 **Name:** ${data.name}\n📧 **Email:** ${data.email}\n💬 **Message:** ${data.msg}`;
+            const success = await sendToDiscord(content, 'Contact Form');
+            contactStatus.textContent = success ? '✅ Message sent to Discord!' : '❌ Failed to send.';
+            contactStatus.style.color = success ? '#6fcf97' : '#ff6b6b';
+        });
+
+        /* =========================================
+           NEWSLETTER
+        ========================================= */
+        document.getElementById('newsletterBtn').addEventListener('click', async () => {
+            const email = document.getElementById('newsletterEmail').value.trim();
+            const status = document.getElementById('newsletterStatus');
+            if (!email || !email.includes('@')) {
+                status.textContent = 'Please enter a valid email.';
+                status.style.color = '#ff6b6b';
+                return;
+            }
+            const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+            if (!subscribers.includes(email)) {
+                subscribers.push(email);
+                localStorage.setItem('subscribers', JSON.stringify(subscribers));
+                status.textContent = `✅ Subscribed! (${subscribers.length} total)`;
+                status.style.color = '#6fcf97';
+                await sendToDiscord(`📬 **New Subscriber**\n📧 ${email}`, 'Newsletter');
+            } else {
+                status.textContent = 'You are already subscribed!';
+                status.style.color = '#ffb74d';
+            }
+            document.getElementById('newsletterEmail').value = '';
+        });
+
+        /* =========================================
+           GUESTBOOK
+        ========================================= */
+        document.getElementById('guestSubmit').addEventListener('click', async () => {
+            const name = document.getElementById('guestName').value.trim();
+            const msg = document.getElementById('guestMsg').value.trim();
+            const status = document.getElementById('guestStatus');
+            if (!name || !msg) {
+                status.textContent = 'Please fill in both fields.';
+                status.style.color = '#ff6b6b';
+                return;
+            }
+            const grid = document.querySelector('.testimonials-grid');
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+            card.innerHTML = `<p class="quote">"${msg}"</p><p class="author">— ${name}</p>`;
+            grid.appendChild(card);
+            status.textContent = '✅ Thank you for your message!';
+            status.style.color = '#6fcf97';
+            document.getElementById('guestName').value = '';
+            document.getElementById('guestMsg').value = '';
+            await sendToDiscord(`💬 **New Testimonial**\n👤 **Name:** ${name}\n📝 **Message:** ${msg}`, 'Guestbook');
+        });
+
+        /* =========================================
+           RESUME
+        ========================================= */
+        document.getElementById('resumeBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert(' actual resume PDF Coming soon. For now, enjoy this demo!');
+        });
+
+        /* =========================================
+           SKILLS PROGRESS
+        ========================================= */
+        function animateSkillBars() {
+            document.querySelectorAll('.progress-fill').forEach(fill => {
+                fill.style.width = fill.getAttribute('data-width') + '%';
+            });
+        }
+        window.addEventListener('load', animateSkillBars);
+        document.querySelector('a[href="#career"]')?.addEventListener('click', () => { setTimeout(animateSkillBars,
+            300); });
+
+        /* =========================================
+           CONSOLE
+        ========================================= */
+        console.log('🎉 ELY ENGA — PROFESSIONAL WEBSITE 100% COMPLETE');
+        console.log('🧠 AI Knowledge Base: 150+ topics (updated with dream career, moms, university)');
+        console.log('🎯 Quiz: 50 questions about Elly');
+        console.log('💬 Discord Webhook: ACTIVE');
+        console.log('📸 Images: /images/ folder');
+        console.log('🎵 Music: /songs/ folder');
+        console.log('🎬 Videos: /videos/ folder');
+    </script>
+
+</body>
+</html>
